@@ -1,0 +1,29 @@
+		
+		-----=====	PinPoller =====-----
+	
+	Va poller un pin GPIO d'un Raspberry Pi toute les 500 milliseconds par défaut
+	Va alerter en fonction des paramètres :
+	 - (Edge) sur un front montant, descendant ou les 2.
+	 - en continu si le mode boucle est activé
+	 - en affichant plus ou moins d'information en fonction de la verbosité
+
+	Une place est laissée libre pour ajouter des actions personnelles dans la fonction "void action_perso( void )" 
+	... Pratique en mode boucle et sans verbosité.
+	Mais peut etre utilisé en script en retirant le mode boucle et affichant une verbosité minimum (1)
+	
+	
+	Pour utiliser ce source, il est necessaire soit d'installer le paquet libboost-dev, 
+	soit de récupérer les sources asio.hpp et posix_time.hpp
+	
+	bug(s) : 
+		- en mode boucle, ne ferme pas proprement le GPIO car on est obligé de killer le programme.
+		- ne prend pas le X de l'option -v ....
+	
+	sources :
+		- http://www.blaess.fr/christophe/2012/11/26/les-gpio-du-raspberry-pi/
+		- http://www.boost.org/
+		  plus préscisément : http://www.boost.org/doc/libs/1_35_0/doc/html/boost_asio/tutorial/tuttimer1.html
+		
+	
+	Développé par Clément ORTIZ (08/11/2013), Open Source ;)
+	
